@@ -150,7 +150,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
-    environment: 
+    environment:
       name: production
       url: https://github.com/TwilightCoders/gemplate/packages
     permissions:
@@ -202,7 +202,7 @@ jobs:
           :github: Bearer ${{ secrets.GITHUB_TOKEN }}
           EOF
           chmod 600 ~/.gem/credentials
-          
+
           # Try to publish, capturing output
           if gem push --key github --host https://rubygems.pkg.github.com/TwilightCoders *.gem 2>&1 | tee publish_output.log; then
             echo "success=true" >> $GITHUB_OUTPUT
