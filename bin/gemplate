@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/gemplate'
+
+Gemplate::CLI.new(ARGV).run
